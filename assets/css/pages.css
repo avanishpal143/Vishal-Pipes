@@ -1,0 +1,248 @@
+/* ==========================================================================
+   VISHAL PIPES LIMITED — SUBPAGE & DETAIL LAYOUTS
+   Modern Minimalist Editorial, Black Bento-Boxes, Refined Spec Tables
+   ========================================================================== */
+
+/* Subpage Hero */
+.page-hero {
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  padding: 104px 0 44px;
+  background: var(--black);
+  border-bottom: 1px solid var(--border-dark-subtle);
+  overflow: hidden;
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  filter: grayscale(80%) contrast(120%);
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14, 14, 14, 0.5) 0%, rgba(14, 14, 14, 0.95) 85%, var(--black) 100%);
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+.page-hero-content .display-1 {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.page-hero-content .lead {
+  font-size: 0.88rem;
+  color: var(--ink-dark-secondary);
+  line-height: 1.55;
+  max-width: 660px;
+}
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-dark-muted);
+  margin-bottom: 10px;
+}
+
+.breadcrumb-nav a {
+  color: #ffffff;
+}
+
+.breadcrumb-nav a:hover {
+  color: var(--red);
+}
+
+.breadcrumb-sep {
+  color: var(--red);
+}
+
+/* Engineering Split Showcase */
+.engineering-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.engineering-split-reverse {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.showcase-img-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+}
+
+.showcase-img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-img-wrap:hover .showcase-img {
+  transform: scale(1.03);
+}
+
+/* Refined Spec Table */
+.spec-table-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  margin-top: 24px;
+}
+
+.spec-table-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-subtle);
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  color: var(--ink);
+}
+
+.spec-table th {
+  background: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--red);
+  font-size: 0.68rem;
+}
+
+.spec-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border-light-subtle);
+  color: var(--ink-secondary);
+}
+
+.spec-table tr:hover td {
+  background: rgba(0, 0, 0, 0.02);
+  color: var(--ink);
+}
+
+/* Facility Feature Box (Clean Light Card) */
+.facility-feature-box {
+  background: #ffffff;
+  color: var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  border: 1px solid var(--border-light);
+  height: 100%;
+}
+
+.facility-feature-box:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--red);
+}
+
+.facility-feature-box h4 {
+  color: var(--ink);
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.facility-feature-box p {
+  color: var(--ink-secondary);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+/* Leadership Card (Sleek Black Bento-Box) */
+.leadership-card {
+  background: var(--black);
+  border: 1px solid var(--border-dark-subtle);
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all var(--transition-normal);
+  position: relative;
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.leadership-card:hover {
+  border-color: rgba(215, 25, 32, 0.4);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.leader-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.leader-name {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.leader-role {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.leader-bio {
+  font-size: 0.78rem;
+  color: var(--ink-dark-secondary);
+  line-height: 1.48;
+}
+
+@media (max-width: 1024px) {
+  .engineering-split, .engineering-split-reverse {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

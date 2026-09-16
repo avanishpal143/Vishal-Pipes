@@ -1,0 +1,438 @@
+/* ==========================================================================
+   VISHAL PIPES LIMITED — DESIGN SYSTEM
+   Modern Minimalist Aesthetic: Clean Light Canvas + Sleek Black/Red Boxes
+   Inspired by High-End Modern Industrial Standards (Mega Charge Reference)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  /* Minimal Warm Cream & Light Canvas Colors */
+  --bg-page: #FAF8F5;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F3EFE8;
+  --bg-cream-card: #FFFFFF;
+  --bg-cream-elevated: #F7F4ED;
+  
+  /* Sleek Carbon & Red-Infused Gradient Palette (No solid flat black) */
+  --black: #0F0D0E;
+  --black-soft: #151113;
+  --carbon-card: linear-gradient(145deg, #181315 0%, #100D0E 60%, #161113 100%);
+  --carbon-card-hover: linear-gradient(145deg, #22171A 0%, #151012 60%, #1B1215 100%);
+  --carbon-border: rgba(255, 255, 255, 0.08);
+  --carbon-border-red: rgba(215, 25, 32, 0.24);
+
+  /* Brand Red Palette */
+  --red: #D71920;
+  --red-hover: #E8242B;
+  --red-dark: #A90F15;
+  --red-glow: rgba(215, 25, 32, 0.25);
+  --red-subtle: rgba(215, 25, 32, 0.08);
+  --red-gradient: linear-gradient(135deg, #E01A22 0%, #B31219 100%);
+  --red-mesh: radial-gradient(circle at 80% 40%, rgba(215, 25, 32, 0.22) 0%, transparent 60%);
+
+  /* Borders & Glassmorphism */
+  --border-light: rgba(0, 0, 0, 0.08);
+  --border-light-subtle: rgba(0, 0, 0, 0.04);
+  --border-dark: rgba(255, 255, 255, 0.11);
+  --border-dark-subtle: rgba(255, 255, 255, 0.06);
+
+  /* Typography Colors */
+  --ink: #111111;
+  --ink-secondary: #555555;
+  --ink-muted: #888888;
+
+  --ink-dark-primary: #FFFFFF;
+  --ink-dark-secondary: #B8B5B5;
+  --ink-dark-muted: #807B7D;
+
+  /* Geometry & Radius */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.09), 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-dark: 0 24px 60px rgba(0, 0, 0, 0.35);
+  --shadow-red: 0 8px 24px rgba(215, 25, 32, 0.28);
+
+  /* Fonts */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Base & Reset
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--bg-page);
+  overflow-x: hidden;
+  position: relative;
+}
+
+img, svg, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, textarea, select {
+  font: inherit;
+  outline: none;
+  border: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   Refined Minimalist Typography (Compact, Architectural & High-End)
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.display-1 {
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+.display-2 {
+  font-size: clamp(1.4rem, 2.2vw, 1.95rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.display-3 {
+  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink-secondary);
+  font-weight: 400;
+}
+
+.micro-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.micro-label::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--red);
+}
+
+.text-red { color: var(--red) !important; }
+.text-white { color: #ffffff !important; }
+.text-muted { color: var(--ink-muted) !important; }
+
+/* ==========================================================================
+   Containers & Spacing
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 3vw, 36px);
+  padding-right: clamp(16px, 3vw, 36px);
+}
+
+.container-narrow {
+  max-width: 960px;
+}
+
+.container-wide {
+  max-width: 1360px;
+}
+
+.section {
+  padding-top: clamp(52px, 6vw, 84px);
+  padding-bottom: clamp(52px, 6vw, 84px);
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: clamp(28px, 3.5vw, 44px);
+}
+
+.section-header.text-center {
+  text-align: center;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.section-desc {
+  font-size: 0.85rem;
+  color: var(--ink-secondary);
+  line-height: 1.55;
+  max-width: 600px;
+}
+
+/* Section Types */
+.section-light {
+  background-color: var(--bg-page);
+  color: var(--ink);
+}
+
+.section-white-bg {
+  background-color: var(--bg-surface);
+  color: var(--ink);
+}
+
+.section-dark-box {
+  background-color: var(--black);
+  color: var(--ink-dark-primary);
+  border: 1px solid var(--border-dark-subtle);
+  border-radius: var(--radius-xl);
+  padding: clamp(36px, 5vw, 64px) clamp(20px, 4vw, 52px);
+  box-shadow: var(--shadow-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-dark-box h1,
+.section-dark-box h2,
+.section-dark-box h3,
+.section-dark-box h4 {
+  color: #ffffff;
+}
+
+.section-dark-box p {
+  color: var(--ink-dark-secondary);
+}
+
+/* ==========================================================================
+   Button System (Modern Pill)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 11px 24px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 0.78rem;
+}
+
+.btn-lg {
+  padding: 14px 30px;
+  font-size: 0.92rem;
+}
+
+.btn-red {
+  background: var(--red-gradient);
+  color: #ffffff !important;
+  box-shadow: var(--shadow-red);
+  border: none;
+}
+
+.btn-red:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(215, 25, 32, 0.38);
+}
+
+.btn-dark {
+  background: var(--black);
+  color: #ffffff !important;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-dark-subtle);
+}
+
+.btn-dark:hover {
+  background: var(--charcoal);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline-dark {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--border-light);
+}
+
+.btn-outline-dark:hover {
+  background: var(--black);
+  color: #ffffff;
+  border-color: var(--black);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border: 1px solid var(--border-dark);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-arrow-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Badges & Micro Pills
+   ========================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+}
+
+.badge-red {
+  background: var(--red);
+  color: #ffffff;
+}
+
+.badge-red-subtle {
+  background: rgba(215, 25, 32, 0.09);
+  color: var(--red);
+  border: 1px solid rgba(215, 25, 32, 0.22);
+}
+
+.badge-dark {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid var(--border-dark-subtle);
+}
+
+.badge-light {
+  background: #ffffff;
+  color: var(--ink);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Utilities */
+.d-flex { display: flex; }
+.align-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.flex-column { flex-direction: column; }
+.gap-sm { gap: 10px; }
+.gap-md { gap: 20px; }
+.gap-lg { gap: 32px; }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .grid-3, .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
